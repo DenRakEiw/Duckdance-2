@@ -1,0 +1,63 @@
+{
+    "num_initialization_frames": 10,
+    "num_stabilization_frames": 5,
+    "human_robot_scaler_config": "configs/soma_to_microduck_scaler_config.json",
+    "ik_iterations": 24,
+    "joint_limit_weight": 10.0,
+    "smooth_joint_filter_weight": 0.0,
+    "enable_post_processing": true,
+    "enable_contact_processing": true,
+    "post_processing": {
+        "robot_config": "configs/microduck_post_processing_config.json"
+    },
+    "ik_match_table": {
+        "Hips": {
+            "t_body": "trunk_base",
+            "r_body": "trunk_base",
+            "t_weight": 15.0,
+            "r_weight": 10.0
+        },
+        "Head": {
+            "t_body": "jaw_soft",
+            "r_body": "jaw_soft",
+            "t_weight": 1.0,
+            "r_weight": 3.0
+        },
+        "LeftLeg": {
+            "t_body": "upper_leg_left",
+            "r_body": "upper_leg_left",
+            "t_weight": 1.5,
+            "r_weight": 0.15
+        },
+        "LeftShin": {
+            "t_body": "leg",
+            "r_body": "leg",
+            "t_weight": 10.0,
+            "r_weight": 1.0
+        },
+        "LeftFoot": {
+            "t_body": "ankle_left",
+            "r_body": "ankle_left",
+            "t_weight": 30.0,
+            "r_weight": 2.0
+        },
+        "RightLeg": {
+            "t_body": "upper_leg_right",
+            "r_body": "upper_leg_right",
+            "t_weight": 1.5,
+            "r_weight": 0.15
+        },
+        "RightShin": {
+            "t_body": "leg_2",
+            "r_body": "leg_2",
+            "t_weight": 10.0,
+            "r_weight": 1.0
+        },
+        "RightFoot": {
+            "t_body": "ankle_right",
+            "r_body": "ankle_right",
+            "t_weight": 30.0,
+            "r_weight": 2.0
+        }
+    }
+}

@@ -1,0 +1,8 @@
+.venv/
+vendor/
+work/
+export/
+motions/
+clips/
+__pycache__/
+robots/pollen/microduck/desc/stage.xml

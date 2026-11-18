@@ -1,0 +1,9 @@
+{
+    "name": "microduck",
+    "desc": {
+        "xml_path": "desc/microduck.xml"
+    },
+    "retarget_configs": {
+        "soma": "configs/soma_to_microduck_retargeter_config.json"
+    }
+}

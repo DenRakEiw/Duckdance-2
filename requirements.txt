@@ -1,0 +1,8 @@
+# Umgebung der App:  uv venv --python 3.12 .venv  &&  uv pip install --python .venv/Scripts/python.exe -r requirements.txt
+mujoco
+numpy
+scipy
+pillow
+imageio
+imageio-ffmpeg
+customtkinter
