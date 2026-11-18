@@ -75,16 +75,23 @@ and domain randomisation match their other one-shot skills.
 
 ```bash
 git clone https://github.com/pollen-robotics/microduck_rl.git vendor/microduck_rl
-cd vendor/microduck_rl && uv sync && cd ../..
+cd vendor/microduck_rl && uv sync
+# on Windows uv resolves the CPU build of PyTorch; swap in the CUDA one
+uv pip install --python .venv/Scripts/python.exe "torch==2.9.1" --index-url https://download.pytorch.org/whl/cu128 --reinstall-package torch
+cd ../..
 python tools/install_training.py
 
 # export a clip in the app, then point the task at it
 set DUCK_DANCE_MOTION=%CD%\export\<clip>.npz
+set PYTHONUTF8=1
 cd vendor/microduck_rl
-uv run train Mjlab-Dance-Flat-MicroDuck --env.scene.num-envs 4096
+uv run --no-sync train Mjlab-Dance-Flat-MicroDuck --env.scene.num-envs 4096 --agent.logger tensorboard
 ```
 
-This part is experimental.
+`--no-sync` keeps uv from putting the CPU build back. Without `DUCK_DANCE_MOTION`
+the task reads `training/reference.npz`.
+
+This part is experimental: the task trains, whether the result dances is not yet shown.
 
 ## Licences
 
